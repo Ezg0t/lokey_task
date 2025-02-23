@@ -18,8 +18,10 @@ quasar dev
 
 #### MOCKED LOGIN PARAMS:
 
+```bash
 login: user
 password: password
+```
 
 ### Lint the files
 
