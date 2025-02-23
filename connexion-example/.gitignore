@@ -1,1 +1,2 @@
 local_dbs/*.db
+.venv
