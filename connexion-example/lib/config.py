@@ -26,14 +26,12 @@ def get_config(environment) -> AppConfig:
                 'DATABASE_URL', default_db_file(environment)),
         )
     if environment == 'development':
-        print(
-            f"Using database URI: {os.getenv('DATABASE_URL', default_db_file(environment))}")
-
         return AppConfig(
             ENVIRONMENT='development',
             SECRET_KEY=os.getenv('SECRET_KEY', 'DEV_SECRET'),
             DEBUG=False,
-            SQLALCHEMY_DATABASE_URI='sqlite:///C:/Users/krylo/Desktop/lokey zadanie/recruitment_task/connexion-example/local_dbs/db_development.db'
+            SQLALCHEMY_DATABASE_URI=os.getenv(
+                'DATABASE_URL', default_db_file(environment)),
         )
     if environment == 'production':
         return AppConfig(
